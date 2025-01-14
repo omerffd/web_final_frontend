@@ -1,0 +1,95 @@
+/* Ana Konteyner */
+.signup-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Başlık */
+.signup-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Alanları */
+.signup-form .form-group {
+  margin-bottom: 20px;
+}
+
+.signup-form .form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.signup-form .form-group input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Buton */
+.signup-btn {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.signup-btn:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+.signup-btn:active {
+  background: #004085;
+  transform: translateY(1px);
+}
+
+/* Giriş Yap Butonu */
+.redirect-login-btn {
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+  background: #28a745;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.redirect-login-btn:hover {
+  background: #218838;
+  transform: translateY(-2px);
+}
+
+.redirect-login-btn:active {
+  background: #1e7e34;
+  transform: translateY(1px);
+}
+
+/* Mesaj */
+.message {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #28a745; /* Başarılı mesaj için yeşil */
+  text-align: center;
+}

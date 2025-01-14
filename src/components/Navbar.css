@@ -1,0 +1,108 @@
+/* Ana Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c3e50;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo ve Marka Alanı */
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-right: 2rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.brand-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffe800;
+  position: relative;
+}
+
+/* Navigasyon Butonları */
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.nav-button {
+  background: #415665;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-button:hover {
+  background: #2980b9;
+}
+
+.nav-button:active {
+  background: #1c6ea4;
+  transform: scale(0.98);
+}
+
+/* Çıkış Butonu */
+.logout-button {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}
+
+.logout-button:active {
+  background-color: #bd2130;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .brand-container {
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+
+  .nav-buttons {
+    justify-content: center;
+  }
+
+  .nav-button {
+    padding: 8px 15px;
+    margin: 0.25rem;
+  }
+} 

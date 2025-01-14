@@ -1,0 +1,143 @@
+/* Form Konteyneri */
+.form-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Animasyon tanımlaması */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Başlık */
+.form-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+  font-weight: 700;
+  font-size: 2.2em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #007bff;
+  position: relative;
+}
+
+/* Form Grupları */
+.create-listing-form .form-group {
+  margin-bottom: 20px;
+}
+
+.create-listing-form .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.create-listing-form .form-group input,
+.create-listing-form .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.create-listing-form .form-group input:focus,
+.create-listing-form .form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Textarea */
+.create-listing-form .form-group textarea {
+  resize: none;
+  height: 100px;
+}
+
+/* Buton */
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #0056b3;
+}
+
+.submit-btn:active {
+  background: #004085;
+}
+
+/* Mesaj */
+.message {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+  color: #28a745; /* Başarılı mesaj için yeşil */
+}
+
+.file-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.file-input:hover {
+  border-color: #e63946;
+}
+
+.image-preview {
+  margin-top: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+}
+
+.image-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Dosya input'u için özel stil */
+.file-input::-webkit-file-upload-button {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px 16px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.file-input::-webkit-file-upload-button:hover {
+  background: #e9ecef;
+}

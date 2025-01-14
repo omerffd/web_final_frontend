@@ -1,0 +1,28 @@
+
+
+/* düzeltilmesi gerekli ilgili componentin containerı bulunmamakta  */
+
+footer {
+    position: fixed; /* Footer'ı ekranın altına sabitle */
+    bottom: 0; /* Alt tarafa sıfırla */
+    left: 50%; /* Yatayda %50'ye yerleştir */
+    transform: translateX(-50%); /* Yatayda tam ortala */
+    display: flex;
+    justify-content: center; /* Yatayda içeriği ortala */
+    align-items: center; /* Dikeyde içeriği ortala */
+    padding: 5px 10px; /* İçerik etrafında boşluk */
+    background-color: #ffffff; /* Arka plan rengi */
+    color: #333; /* Metin rengi */
+    font-family: Arial, sans-serif; /* Yazı tipi */
+    font-size: 14px; /* Yazı boyutu */
+    border-radius: 5px; /* İsteğe bağlı: Köşeleri yuvarlat */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Hafif gölge ekle */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Yumuşak geçiş efekti */
+    cursor: pointer; /* Fare ikonu */
+  }
+  
+  footer:hover {
+    background-color: #0056b3; /* Hover sırasında arka plan */
+    color: #ffffff; /* Hover sırasında metin rengi */
+  }
+ 

@@ -1,0 +1,89 @@
+/* Ana Konteyner */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  /* Başlık */
+  .login-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Form Alanları */
+  .login-form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .login-form .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .login-form .form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Giriş Yap Butonu */
+  .login-btn {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-bottom: 10px;
+  }
+  
+  .login-btn:hover {
+    background: #0056b3;
+  }
+  
+  .login-btn:active {
+    background: #004085;
+  }
+  
+  /* Kayıt Ol Butonu */
+  .register-btn {
+    width: 100%;
+    padding: 10px;
+    background: #28a745;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .register-btn:hover {
+    background: #218838;
+  }
+  
+  .register-btn:active {
+    background: #1e7e34;
+  }
+  
+  /* Mesaj */
+  .message {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #28a745; /* Başarılı mesaj için yeşil */
+    text-align: center;
+  }
+  
