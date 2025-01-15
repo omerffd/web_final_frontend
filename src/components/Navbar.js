@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar() {
   const navigate = useNavigate();
   const isLoggedIn = localStorage.getItem('token');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
     alert("Başarıyla çıkış yaptınız.");
     navigate('/');
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
@@ -25,7 +30,11 @@ function Navbar() {
         <span className="brand-title">INEKINDEN</span>
       </div>
 
-      <div className="nav-buttons">
+      <button className="hamburger" onClick={toggleMenu}>
+        ☰
+      </button>
+
+      <div className={`nav-buttons ${isMenuOpen ? 'active' : ''}`}>
         <button className="nav-button" onClick={() => navigate("/home")}>
           Ana Sayfa
         </button>
@@ -44,7 +53,7 @@ function Navbar() {
         <button className="nav-button" onClick={() => navigate("/about")}>
           Hakkımda
         </button>
-        <button className="nav-button" onClick={handleLogout}>
+        <button className="nav-button logout" onClick={handleLogout}>
           Çıkış Yap
         </button>
       </div>
