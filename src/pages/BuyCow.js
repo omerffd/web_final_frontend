@@ -4,6 +4,7 @@ import "./BuyCow.css";
 
 // .env dosyasından API URL'sini al
 const API_URL = process.env.REACT_APP_API_URL;
+const MY_API = process.env.MY_API;
 
 const BuyCow = () => {
   const [cows, setCows] = useState([]);
@@ -16,7 +17,7 @@ const BuyCow = () => {
   useEffect(() => {
     const fetchCows = async () => {
       try {
-        const response = await fetch(`${API_URL}/buy-cow`);
+        const response = await fetch(`${MY_API}/buy-cow`);
         const data = await response.json();
         setCows(data);
         setFilteredCows(data);
