@@ -15,6 +15,48 @@ const CreateListing = () => {
   const [previewUrl, setPreviewUrl] = useState(null); // Resim önizleme için state
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(""); // Hata mesajı için state
+  const [phoneNumber, setPhoneNumber] = useState(""); // Telefon numarası için state
+
+  // Telefon numarası validasyonu için fonksiyon
+  const validatePhoneNumber = (number) => {
+    // Yeni format: 05XX-XXX-XX-XX
+    const phoneRegex = /^05\d{2}-\d{3}-\d{2}-\d{2}$/;
+    return phoneRegex.test(number);
+  };
+
+  // Telefon numarasını formatla
+  const formatPhoneNumber = (value) => {
+    // Sadece rakamları al
+    const numbers = value.replace(/\D/g, '');
+    
+    // Maksimum 11 rakam olacak şekilde kes
+    const trimmed = numbers.slice(0, 11);
+    
+    // Formatı uygula
+    let formatted = '';
+    if (trimmed.length > 0) {
+      formatted = trimmed.slice(0, 4);
+      if (trimmed.length > 4) {
+        formatted += `-${trimmed.slice(4, 7)}`;
+      }
+      if (trimmed.length > 7) {
+        formatted += `-${trimmed.slice(7, 9)}`;
+      }
+      if (trimmed.length > 9) {
+        formatted += `-${trimmed.slice(9, 11)}`;
+      }
+    }
+    return formatted;
+  };
+
+  // Telefon numarası değiştiğinde çalışacak handler
+  const handlePhoneNumberChange = (e) => {
+    const input = e.target.value;
+    // Sadece rakamları al
+    const numbersOnly = input.replace(/\D/g, '');
+    // Formatlanmış değeri state'e kaydet
+    setPhoneNumber(formatPhoneNumber(numbersOnly));
+  };
 
   // Resim seçme işlemi
   const handleImageChange = (e) => {
@@ -44,14 +86,21 @@ const CreateListing = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError(""); // Hata mesajını sıfırla
+    setError("");
   
-    if (!title || !description || !price) {
+    if (!title || !description || !price || !phoneNumber) {
       setError("Lütfen tüm alanları doldurun.");
       setLoading(false);
       return;
     }
-  
+
+    // Telefon numarası formatını kontrol et
+    if (!validatePhoneNumber(phoneNumber)) {
+      setError("Lütfen geçerli bir telefon numarası girin. Örnek: 05XX XXX XX XX");
+      setLoading(false);
+      return;
+    }
+
     try {
       // Resmi yükle
       let photoUrl = null;
@@ -82,6 +131,7 @@ const CreateListing = () => {
           ],
           price: parseFloat(price),
           photo_link: photoUrl, // Backend'den alınan resim URL'sini burada kullanıyoruz
+          phone_number: phoneNumber, // Telefon numarasını ekle
         },
       });
   
@@ -182,6 +232,20 @@ const CreateListing = () => {
               onChange={(e) => setPrice(e.target.value)}
               required
             />
+          </div>
+          <div className="form-group">
+            <label htmlFor="phone_number">Telefon Numarası</label>
+            <input
+              type="tel"
+              id="phone_number"
+              placeholder="05XX-XXX-XX-XX"
+              value={phoneNumber}
+              onChange={handlePhoneNumberChange}
+              required
+            />
+            <small className="form-text">
+              Örnek format: 0555-333-33-33
+            </small>
           </div>
           <div className="form-group">
             <label htmlFor="image">Resim:</label>
